@@ -33,11 +33,6 @@ test('Stundenlohn bei Arbeitgeber Lidl = 12.5',() => {
   expect(daoA.loadById(3).stundenlohn).toEqual(12.5);
 })
 
-// Provozierter Fehler: Stundenlohn ist tatsächlich 12.5
-test('Stundenlohn bei Arbeitgeber Lidl = 8.5',() => {
-  expect(daoA.loadById(3).stundenlohn).toEqual(8.5);
-})
-
 // FOREIGN KEY constraint test: darf nichtlöschbar sein -> notTure
 test('delete test', () => {
   expect(daoA.delete(1)).not.toBeTruthy();
