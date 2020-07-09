@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Cash Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/ico" href="../img/icon.ico">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-dark bg-dark d-block d-md-none navbar-expand-md">
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button>
+      <span class="navbar-brand">Arbeitgeber</span>
+      <div class="collapse navbar-collapse"
+        id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+          <li class="active nav-item"><a href="#" class="nav-link">Arbeitgeber</a>
+          </li>
+          <li class="nav-item"><a href="schichten.html" class="nav-link">Schichten</a>
+          </li>
+          <li class="nav-item"><a href="bilanz.html" class="nav-link">Bilanz</a>
+          </li>
+          <li class="nav-item"><a href="logout.html" class="nav-link">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-md-3 sidenav d-none d-md-block">
+          <img class="logo" src="../img/logo.jpg" alt="Logo">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a>
+            </li>
+            <li class="active nav-item"><a href="#" class="nav-link">Arbeitgeber</a>
+            </li>
+            <li class="nav-item"><a href="schichten.html" class="nav-link">Schichten</a>
+            </li>
+            <li class="nav-item"><a href="bilanz.html" class="nav-link">Bilanz</a>
+            </li>
+            <li class="nav-item"><a href="logout.html" class="nav-link">Logout</a>
+            </li>
+          </ul>
+          <br>
+        </div>
+        <br>	
+        <div class="col-md-9">
+          <div class="card bg-light card-body mb-3">
+            <div class="row">
+              <div class="col-sm-8">
+                <h2>Ada Lovelace</h2>
+                <p>Coole-Str. 31, 654654 Hamburg</p>
+              </div>
+              <div class="col-sm-4">
+                <button type="button" class="btn" data-toggle="modal" data-target="#arbeitgeber">Arbeitgeber hinzufügen</button>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="arbeitgeber" tabindex="-1" role="dialog" aria-labelledby="arbeit_head" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="arbeit_head">Arbeitgeber hinzufügen</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="arbeit">Arbeitgeber</label>
+                          <input type="text" class="form-control" id="arbeit" placeholder="Arbeitgeber">
+                        </div>
+                        <div class="form-group">
+                          <label for="lohn">Stundenlohn in €</label>
+                          <input type="number" step=0.50 class="form-control" id="lohn" placeholder="12,50">
+                        </div>
+                        <div class="form-group">
+                          <label for="adresse">Adresse</label>
+                          <input type="text" class="form-control" id="adresse" placeholder="Beispielstr. 3">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-2">
+                            <label for="plz">PLZ</label>
+                            <input type="text" class="form-control" id="plz" placeholder="56188">
+                          </div>
+                          <div class="form-group col-md-10">
+                            <label for="stadt">Stadt</label>
+                            <input type="text" class="form-control" id="stadt" placeholder="Hamburg">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn" data-dismiss="modal">Abbrechen</button>
+                      <button type="button" class="btn">Speichern</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card bg-light card-body mb-3">
+                <h3 class="text-left">Arbeitgeber</h3>
+                <br>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr class="table_grey">
+                      <th scope="col">Arbeitgeber</th>
+                      <th scope="col">Stundenlohn</th>
+                      <th scope="col">Anschrift</th>
+                      <th scope="col">Bearbeiten</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Penny</td>
+                      <td class="text-right">19,50 €</td>
+                      <td>Beispielstr. 123, 46484 Albstadt</td>
+                      <td class="icon_edit"><button type="button" class="btn_edit" data-toggle="modal" data-target="#arbeitgeber_edit">&#x2699;</button></td>
+                    </tr>
+                    <tr>
+                      <td>Müller</td>
+                      <td class="text-right">12,50 €</td>
+                      <td>Beispielstr. 123, 46484 Albstadt</td>
+                      <td class="icon_edit"><button type="button" class="btn_edit" data-toggle="modal" data-target="#arbeitgeber_edit">&#x2699;</button></td>
+                    </tr>
+                    <tr>
+                      <td>Rewe</td>
+                      <td class="text-right">14,00 €</td>
+                      <td>Beispielstr. 123, 46484 Albstadt</td>
+                      <td class="icon_edit"><button type="button" class="btn_edit" data-toggle="modal" data-target="#arbeitgeber_edit">&#x2699;</button></td>
+                    </tr>
+                    <tr>
+                      <td>Hochschule Albstadt</td>
+                      <td class="text-right">11,50 €</td>
+                      <td>Beispielstr. 123, 46484 Albstadt</td>
+                      <td class="icon_edit"><button type="button" class="btn_edit" data-toggle="modal" data-target="#arbeitgeber_edit">&#x2699;</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="arbeitgeber_edit" tabindex="-1" role="dialog" aria-labelledby="arbeit_bear" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="arbeit_bear">Arbeitgeber bearebiten</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="arbeit_edit">Arbeitgeber</label>
+                          <input type="text" class="form-control" id="arbeit_edit" placeholder="Arbeitgeber">
+                        </div>
+                        <div class="form-group">
+                          <label for="lohn_edit">Stundenlohn in €</label>
+                          <input type="number" step=0.50 class="form-control" id="lohn_edit" placeholder="12,50">
+                        </div>
+                        <div class="form-group">
+                          <label for="adresse_edit">Adresse</label>
+                          <input type="text" class="form-control" id="adresse_edit" placeholder="Beispielstr. 3">
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-2">
+                            <label for="plz_edit">PLZ</label>
+                            <input type="text" class="form-control" id="plz_edit" placeholder="56188">
+                          </div>
+                          <div class="form-group col-md-10">
+                            <label for="stadt_edit">Stadt</label>
+                            <input type="text" class="form-control" id="stadt_edit" placeholder="Hamburg">
+                          </div>
+                        </div>
+                        <button type="button" class="btn">Arbeitgeber löschen</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn" data-dismiss="modal">Abbrechen</button>
+                      <button type="button" class="btn">Speichern</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© Copyright 2020, Cloud</p>
+	  <p><a href="impressum.html">Impressum</a></p>
+    </footer>
+  </body>
+</html>
